@@ -1,57 +1,79 @@
 <!DOCTYPE html>
-<html lang="en-gb">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="styles/reset.css" />
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" /> -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
-  <title>Weather Dashboard</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js"></script>
+    <title>Weather Dashboard</title>
 </head>
-
 <body>
-  <header class="container-fluid text-center text-white bg-dark p-2 weather-header">
-    <h1>Weather Dashboard</h1>
-  </header>
-
-  <!-- max-width for ultra wide resolutions -->
-  <div class="container-fluid" style="max-width: 1400px">
-    <div class="row">
-      <aside class="col-lg-3 pb-3">
-        <h2 id="form-heading" class="mt-1 h3 form-label">
-          Search for a City:
-        </h2>
-        <form id="search-form" class="form">
-          <div class="form-inline form-group">
-            <div class="input-group">
-              <input class="form-input weather-search" type="text" id="search-input" placeholder="London"
-                aria-labelledby="form-heading" aria-controls="today forecast" />
-              <div class="input-group-append">
-                <button type="submit" class="btn search-button" id="search-button" aria-label="submit search">
-                  Search
-                </button>
-                <hr class="hr weather-hr" />
-              </div>
+    <header class="headline"><h1>Weather Dashboard</h1></header>
+    <div class="container">
+        <div class="search">
+           <h3>Search for a City:</h3>
+           <input type="text">
+           <button>Search</button>
+           <hr>
+           <button class="history">Prague</button>
+           <button class="history">Tunbridge Wells</button>
+           <button class="history">Edinburgh</button>
+           <button class="history">Paris</button>
+           <button class="history">New York</button>
+           <button class="history">Tokyo</button>
+           <button class="history">Athens</button>
+           <button class="history">Rome</button>
+        </div>
+        <div class="data">
+            <div class="today">
+                <h2>London (14/9/2022)</h2>
+                <p>Temp: 13.63 C</p>
+                <p>Wind: 1.7 KPH</p>
+                <p>Humidity: 84%</p>
             </div>
-          </div>
-        </form>
-        <div class="list-group" id="history"></div>
-      </aside>
-
-      <div class="col-lg-9 pb-3">
-        <section id="today" class="mt-3" role="region" aria-live="polite"></section>
-        <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
-      </div>
+            <div class="forecast">
+                <h3>5-Day Forecast:</h3>
+                <div class="next_five">
+                    <div class="day">
+                        <h4>15/9/2022</h4>
+                        <p>###</p>
+                        <p>Temp: 18.89 C</p>
+                        <p>Wind: 2.76 KPH</p>
+                        <p>Humidity: 44%</p>
+                    </div>
+                    <div class="day">
+                        <h4>15/9/2022</h4>
+                        <p>###</p>
+                        <p>Temp: 18.89 C</p>
+                        <p>Wind: 2.76 KPH</p>
+                        <p>Humidity: 44%</p>
+                    </div>
+                    <div class="day">
+                        <h4>15/9/2022</h4>
+                        <p>###</p>
+                        <p>Temp: 18.89 C</p>
+                        <p>Wind: 2.76 KPH</p>
+                        <p>Humidity: 44%</p>
+                    </div>
+                    <div class="day">
+                        <h4>15/9/2022</h4>
+                        <p>###</p>
+                        <p>Temp: 18.89 C</p>
+                        <p>Wind: 2.76 KPH</p>
+                        <p>Humidity: 44%</p>
+                    </div>
+                    <div class="day">
+                        <h4>15/9/2022</h4>
+                        <p>###</p>
+                        <p>Temp: 18.89 C</p>
+                        <p>Wind: 2.76 KPH</p>
+                        <p>Humidity: 44%</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <a href="https://www.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_8562848.htm#query=weather%20background&position=4&from_view=keyword">Image by starline</a> on Freepik -->
+        </div>
     </div>
-  </div>
-
-  <!-- Moment.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-  <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="script.js"></script>
 </body>
-
 </html>

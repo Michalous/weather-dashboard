@@ -1,0 +1,161 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: blanchedalmond;
+    font-family: Helvetica, Arial, sans-serif;
+
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.headline {
+    margin-top: 2%;
+    width: 100%;
+    max-width: 1400px;
+    background-color: beige;
+    text-align: center;
+    background-image: linear-gradient(to bottom right,lightblue, navy);
+    color: aliceblue;
+}
+
+.search {
+    min-width: 20%;
+    background-color: aliceblue;
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.data {
+    min-width: 80%;
+    height: 500px;
+    background-color: aliceblue;
+}
+
+.today {
+    padding: 5px;
+    width: 100%;
+    height: 45%;
+    background-image: url("./assets/gorgeous-clouds-background-with-blue-sky-design/25501.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+
+.forecast {
+    height: 55%;
+}
+
+.next_five {
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.day {
+    height: 90%;
+    width: 18%;
+    background-color: grey;
+    color: aliceblue;
+    background-image: linear-gradient(to top right, rgb(30, 30, 30), rgb(45, 45, 45));
+    opacity: 0.9;
+}
+
+.day p, .day h4 {
+    margin: 5px;
+}
+
+.search input {
+    width: 90%;
+    margin-left: 5px;
+    height: 25px;
+    font-size: 20px;
+}
+
+.search h3 {
+    margin-left: 5px;
+}
+
+.search button {
+    width: 94%;
+    margin-left: 5px;
+    height: 30px;
+    font-size: 14px;
+    background-color: navy;
+    color: aliceblue;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+button.history {
+    background-color: grey;
+}
+
+@media only screen and (max-width: 800px) {
+    .next_five {
+        flex-direction: column;
+    }
+
+    .container, .data {
+        height: 950px;
+    }
+
+    .day {
+        height: 170px;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    body {
+        background-color: aliceblue;
+    }
+    .container {
+        flex-direction: column-reverse;
+        height: auto;
+    }
+
+    .today {
+        height: 250px;
+        width: 100%;
+    }
+
+    .forecast {
+        height: 250px;
+        width: 100%;
+    }
+
+    .search {
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search input {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .search button {
+        height: 40px;
+        margin-top: 25px;
+        width: 92%;
+    }
+}
