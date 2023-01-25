@@ -65,6 +65,10 @@ body {
     background-position: center; 
 }
 
+#main_icon {
+    margin-bottom: -20px;
+}
+
 .forecast {
     height: 55%;
 }
@@ -130,7 +134,7 @@ button:hover {
     }
 
     .container, .data {
-        height: 950px;
+        height: 1150px;
     }
 
     .day {

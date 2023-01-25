@@ -19,7 +19,7 @@
            <button id="search_btn">Search</button>
            <hr>
            <button class="history">Prague</button>
-           <button class="history">Tunbridge Wells</button>
+           <button class="history">Royal Tunbridge Wells</button>
            <button class="history">Edinburgh</button>
            <button class="history">Paris</button>
            <button class="history">New York</button>
@@ -29,50 +29,14 @@
         </div>
         <div class="data">
             <div class="today">
-                <h2>London (14/9/2022)</h2>
-                <p>Temp: 13.63 C</p>
-                <p>Wind: 1.7 KPH</p>
-                <p>Humidity: 84%</p>
+                <h2><span id="city_name"></span> <span id="date"></span> <span id="icon"></span></h2>
+                <p>Temp: <span id="temperature"></span> &#8451</p>
+                <p>Wind: <span id="wind"></span>KPH</p>
+                <p>Humidity: <span id="humidity"></span>%</p>
             </div>
             <div class="forecast">
                 <h3>5-Day Forecast:</h3>
-                <div class="next_five">
-                    <div class="day">
-                        <h4>15/9/2022</h4>
-                        <p>###</p>
-                        <p>Temp: 18.89 C</p>
-                        <p>Wind: 2.76 KPH</p>
-                        <p>Humidity: 44%</p>
-                    </div>
-                    <div class="day">
-                        <h4>15/9/2022</h4>
-                        <p>###</p>
-                        <p>Temp: 18.89 C</p>
-                        <p>Wind: 2.76 KPH</p>
-                        <p>Humidity: 44%</p>
-                    </div>
-                    <div class="day">
-                        <h4>15/9/2022</h4>
-                        <p>###</p>
-                        <p>Temp: 18.89 C</p>
-                        <p>Wind: 2.76 KPH</p>
-                        <p>Humidity: 44%</p>
-                    </div>
-                    <div class="day">
-                        <h4>15/9/2022</h4>
-                        <p>###</p>
-                        <p>Temp: 18.89 C</p>
-                        <p>Wind: 2.76 KPH</p>
-                        <p>Humidity: 44%</p>
-                    </div>
-                    <div class="day">
-                        <h4>15/9/2022</h4>
-                        <p>###</p>
-                        <p>Temp: 18.89 C</p>
-                        <p>Wind: 2.76 KPH</p>
-                        <p>Humidity: 44%</p>
-                    </div>
-                </div>
+                <div class="next_five" id="next_five"></div>
             </div>
             <!-- <a href="https://www.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_8562848.htm#query=weather%20background&position=4&from_view=keyword">Image by starline</a> on Freepik -->
         </div>
