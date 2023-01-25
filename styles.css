@@ -36,6 +36,20 @@ body {
     overflow-x: hidden;
 }
 
+#results {
+    background-color: white;
+    margin-top: 10px;
+}
+
+.result {
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+.result:hover {
+    cursor: pointer;
+}
+
 .data {
     min-width: 80%;
     height: 500px;
@@ -104,6 +118,12 @@ button.history {
     background-color: grey;
 }
 
+button:hover {
+    transform: scale(1.05);
+    transition-duration: 0.7s;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 800px) {
     .next_five {
         flex-direction: column;
@@ -137,6 +157,10 @@ button.history {
     .forecast {
         height: 250px;
         width: 100%;
+    }
+
+    #results, .result {
+        width: 90%;
     }
 
     .search {

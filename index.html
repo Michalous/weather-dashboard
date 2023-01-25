@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="./script.js"></script>
     <title>Weather Dashboard</title>
 </head>
@@ -13,8 +14,9 @@
     <div class="container">
         <div class="search">
            <h3>Search for a City:</h3>
-           <input type="text">
-           <button>Search</button>
+           <input id="search_input" type="text">
+           <div id="results"></div>
+           <button id="search_btn">Search</button>
            <hr>
            <button class="history">Prague</button>
            <button class="history">Tunbridge Wells</button>
@@ -75,5 +77,6 @@
             <!-- <a href="https://www.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_8562848.htm#query=weather%20background&position=4&from_view=keyword">Image by starline</a> on Freepik -->
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 </body>
 </html>
