@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var location = document.getElementById('search_input')
             
             // requests the coordinates of a city typed in by user
-            $.get(`http://api.openweathermap.org/geo/1.0/direct?q=${location.value}&limit=5&appid=${API_key}`, function(data, status) {
+            $.get(`https://api.openweathermap.org/geo/1.0/direct?q=${location.value}&limit=5&appid=${API_key}`, function(data, status) {
             // if no result returned notifies user 
             if (data.length == 0) {
                 var noResults = $('<div class="red">No result!</div>')
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // displays 5 day forecast returned data
     function fiveDayForecast(latitude, longitude) {
         $('#next_five').empty()
-        $.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_key}`, function(data, status) {
+        $.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_key}`, function(data, status) {
 
             for (var i = 4; i <= 36; i += 8) {
                 var date = data.list[i]['dt_txt']
