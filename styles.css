@@ -55,6 +55,15 @@ body {
     cursor: pointer;
 }
 
+#history_buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: -5px;
+}
+
 .data {
     min-width: 80%;
     height: 500px;
@@ -128,9 +137,10 @@ button.history {
 }
 
 button:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     transition-duration: 0.7s;
     cursor: pointer;
+    opacity: 0.8;
 }
 
 @media only screen and (max-width: 800px) {

@@ -6,13 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         todayForecast(51.5073219, -0.1276474)
         displayHistory()
 
-        $('.history').click(function() {
-            var lat = $(this).data('lat')
-            var lon = $(this).data('lon')
-            todayForecast(lat, lon)
-            fiveDayForecast(lat, lon)
-        })
-
         $(document).ajaxError(function(e, xhr, opt){
             if (xhr.statusText == 'Bad Request') {
                 console.log("I'm dealing with the 400 Bad Request...")
@@ -122,5 +115,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 $('#history_buttons').prepend(button)
             }   
         }
+        clickHistory()
+    }
+
+    function clickHistory() {
+        $('.history').click(function() {
+            var lat = $(this).data('lat')
+            var lon = $(this).data('lon')
+            todayForecast(lat, lon)
+            fiveDayForecast(lat, lon)
+        })
     }
 })
