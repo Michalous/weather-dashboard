@@ -41,6 +41,11 @@ body {
     margin-top: 10px;
 }
 
+.red {
+    color: red;
+    margin-left: 5px;
+}
+
 .result {
     text-decoration: underline;
     margin-left: 5px;
