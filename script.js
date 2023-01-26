@@ -2,10 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var API_key = '45c2707f89d16318fbaddd18663434b4'
     $(document).ready(function() {
 
+        // shows data for London when page first loaded
         fiveDayForecast(51.5073219, -0.1276474)
         todayForecast(51.5073219, -0.1276474)
         displayHistory()
 
+        //deals with bad requests - when user submits empty string, ",", etc.
         $(document).ajaxError(function(e, xhr, opt){
             if (xhr.statusText == 'Bad Request') {
                 console.log("I'm dealing with the 400 Bad Request...")
@@ -18,16 +20,21 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#results').empty()
             var location = document.getElementById('search_input')
             
+            // requests the coordinates of a city typed in by user
             $.get(`http://api.openweathermap.org/geo/1.0/direct?q=${location.value}&limit=5&appid=${API_key}`, function(data, status) {
+            // if no result returned notifies user 
             if (data.length == 0) {
                 var noResults = $('<div class="red">No result!</div>')
                 $('#results').append(noResults) 
             }
+            // displays options returned by request (up to 5)
             for (var i = 0; i < data.length; i++) {
                     var item = $(`<div class="result" data-name="${data[i].name}" data-location='["${data[i].lat}", "${data[i].lon}", "${data[i].name}"]'></div>`).text(`${data[i].name}, ${data[i].country}, ${data[i].state}`)
                     $('#results').append(item)
                 }
+                // specifies what happens when user clicks on one of the options
                 $('.result').click(function() {
+                    location.value = "" // clears input field
                     var locData = $(this).data('location')
                     var name = $(this).data('name')
                     $('#results').empty()
@@ -41,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     })
 
-    
+    // displays 5 day forecast returned data
     function fiveDayForecast(latitude, longitude) {
         $('#next_five').empty()
         $.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_key}`, function(data, status) {
@@ -66,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }
 
+    // displays current day data
     function todayForecast(latitude, longitude) {
         $('#icon').empty()
         $.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_key}`, function(data, status) {
@@ -91,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }
 
+    // saves searched city to local storage
     function saveToLocalStorage(latitude, longitude, city) {
         if (window.localStorage.getItem("cityObj") == null) {
             var cityObj = {}
@@ -102,9 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
         var coordinates = [latitude, longitude]
         cityObj[city] = coordinates
         window.localStorage.setItem('cityObj', JSON.stringify(cityObj))
-        console.log('saved!')
+        
     }
 
+    // displays cities saved in local storage
     function displayHistory() {
         $('#history_buttons').empty()
         if (window.localStorage.getItem("cityObj") != null) {
@@ -118,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
         clickHistory()
     }
 
+    // enables clicking on history entries and shows data of that entry
     function clickHistory() {
         $('.history').click(function() {
             var lat = $(this).data('lat')
