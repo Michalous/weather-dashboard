@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     todayForecast(locData[0], locData[1])
                     saveToLocalStorage(locData[0], locData[1], name)
                     displayHistory()
+                    topFunction()
                 })
             
             })    
