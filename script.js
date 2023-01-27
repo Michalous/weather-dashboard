@@ -135,6 +135,12 @@ document.addEventListener('DOMContentLoaded', function() {
             var lon = $(this).data('lon')
             todayForecast(lat, lon)
             fiveDayForecast(lat, lon)
+            topFunction()
         })
+    }
+    // this was "borrowed" from W3Schools - scrolls back to top when user presses history button on mobile devices
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     }
 })
